@@ -1,7 +1,10 @@
 <!DOCTYPE html>
+
+    <!--title>Users Stink!!! | <%= yield(:title) %></title-->
+ 
 <html>
   <head>
-    <title><%= full_title(yield(:title)) %></title>
+    <title>Users Stink!!! | <%= yield(:title)%></title>
     <%= stylesheet_link_tag    "application", media: "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
@@ -12,7 +15,14 @@
     <div class="container">
       <%= yield %>
       <%= render 'layouts/footer' %>
-      <%= debug(params) if Rails.env.development? %>
     </div>
   </body>  
+  </head>
+  <body>
+    <%= render 'layouts/header' %>
+    <div class="container">
+      <%= yield %>
+      <%= render 'layouts/footer' %>
+    </div>
+  </body>
 </html>
