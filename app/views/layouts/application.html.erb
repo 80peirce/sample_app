@@ -4,7 +4,7 @@
  
 <html>
   <head>
-    <title>Users Stink!!! | <%= yield(:title)%></title>
+    <title><%= full_title(yield(:title)) %></title>
     <%= stylesheet_link_tag    "application", media: "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
@@ -17,12 +17,4 @@
       <%= render 'layouts/footer' %>
     </div>
   </body>  
-  </head>
-  <body>
-    <%= render 'layouts/header' %>
-    <div class="container">
-      <%= yield %>
-      <%= render 'layouts/footer' %>
-    </div>
-  </body>
 </html>
